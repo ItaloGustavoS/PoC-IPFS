@@ -10,10 +10,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, // Para arquivos JS e JSX
-        exclude: /node_modules/,
+        test: /\.(js|jsx)$/, // Aplica a regra para arquivos JS e JSX
+        exclude: /node_modules/, // Ignora a pasta node_modules
         use: {
           loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
         },
       },
     ],
