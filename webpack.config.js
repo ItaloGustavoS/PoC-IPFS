@@ -1,16 +1,16 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./front.jsx", // Arquivo de entrada
-  output: {
-    filename: "bundle.js", // Arquivo de saída
-    path: path.resolve(__dirname, "dist"), // Diretório de saída
-  },
   mode: "development",
+  entry: "./front.jsx",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx)$/, // Para arquivos JS e JSX
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -23,9 +23,9 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, "dist"), // Servir arquivos do diretório "dist"
+      directory: path.resolve(__dirname, "dist"), // Substitui contentBase
     },
-    port: 3000, // Porta para o servidor de desenvolvimento
-    open: true, // Abrir automaticamente no navegador
+    port: 3000,
+    open: true,
   },
 };
