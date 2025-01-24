@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ipfs from "./ipfsClient"; // Importa a instância do cliente IPFS
+const ipfs = require("./ipfsClient");
 
 const IPFSUploader = () => {
   const [file, setFile] = useState(null); // Para o arquivo a ser enviado
